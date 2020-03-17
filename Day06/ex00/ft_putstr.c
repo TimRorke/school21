@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/02 12:10:14 by okate             #+#    #+#             */
+/*   Updated: 2020/03/04 17:16:36 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-int		main(int ac, char **av)
+void	ft_putstr(char *str)
 {
-	write(1, "z\n", 2);
-	return (0);
+	int num;
+
+	num = 0;
+	while (str[num] != '\0')
+	{
+		ft_putchar(str[num]);
+		num++;
+	}
 }

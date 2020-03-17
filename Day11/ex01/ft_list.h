@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/11 15:49:58 by okate             #+#    #+#             */
+/*   Updated: 2020/03/11 23:03:29 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-int		main(int ac, char **av)
+typedef struct		s_list
 {
-	write(1, "z\n", 2);
-	return (0);
-}
+	void			*data;
+	struct s_list	*next;
+}					t_list;
+
+t_list				*ft_create_elem(void *data);
+
+#endif

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/10 17:41:10 by okate             #+#    #+#             */
+/*   Updated: 2020/03/10 21:42:24 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		main(int ac, char **av)
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	write(1, "z\n", 2);
-	return (0);
+	int		i;
+
+	i = 0;
+	while (i + 1 < length)
+	{
+		if (f(tab[i], tab[i + 1]) > 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }

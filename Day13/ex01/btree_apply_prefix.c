@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   btree_apply_prefix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/13 21:44:55 by okate             #+#    #+#             */
+/*   Updated: 2020/03/13 21:55:56 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_btree.h"
+#include <stdlib.h>
 
-int		main(int ac, char **av)
+void	btree_apply_prefix(t_btree *root, void (*applyf)(void *))
 {
-	write(1, "z\n", 2);
-	return (0);
+	applyf(root->item);
+	if (root->left)
+		btree_apply_prefix(root->left, applyf);
+	if (root->right)
+		btree_apply_prefix(root->right, applyf);
 }

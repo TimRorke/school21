@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   btree_apply_suffix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/13 21:57:33 by okate             #+#    #+#             */
+/*   Updated: 2020/03/13 22:01:48 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		main(int ac, char **av)
+void	btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 {
-	write(1, "z\n", 2);
-	return (0);
+	if (root->left)
+		btree_apply_suffix(root->left, applyf);
+	if (root->right)
+		btree_apply_suffix(root->right, applyf);
+	applyf(root->item);
 }

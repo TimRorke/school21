@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/03 15:58:58 by okate             #+#    #+#             */
+/*   Updated: 2020/03/03 21:40:49 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+char	*ft_strcpy(char *dest, char *src);
 
-int		main(int ac, char **av)
+char	*ft_strcpy(char *dest, char *src)
 {
-	write(1, "z\n", 2);
-	return (0);
+	int a;
+
+	a = 0;
+	while (src[a] != '\0')
+	{
+		dest[a] = src[a];
+		a++;
+	}
+	while (dest[a] != '\0')
+	{
+		dest[a] = '\0';
+	}
+	return (dest);
 }

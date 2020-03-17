@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/02/27 15:50:21 by okate             #+#    #+#             */
+/*   Updated: 2020/02/27 18:17:28 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		main(int ac, char **av)
+void	ft_print_reverse_alphabet(void)
 {
-	write(1, "z\n", 2);
-	return (0);
+	int a;
+
+	a = 90;
+	while (a >= 65)
+	{
+		ft_putchar(a);
+		a--;
+	}
 }

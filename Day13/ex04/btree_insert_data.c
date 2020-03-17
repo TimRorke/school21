@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   btree_insert_data.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/13 22:50:27 by okate             #+#    #+#             */
+/*   Updated: 2020/03/14 17:16:35 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_btree.h"
 
-int		main(int ac, char **av)
+void	btree_insert_data(t_btree **root, void *item,
+int (*cmpf)(void *, void *))
 {
-	write(1, "z\n", 2);
-	return (0);
+	if (*root == 0)
+		*root = btree_create_node(item);
+	else if (cmpf((*root)->item, item) > 0)
+		btree_insert_data(&((*root)->left), item, cmpf);
+	else
+		btree_insert_data(&((*root)->right), item, cmpf);
 }

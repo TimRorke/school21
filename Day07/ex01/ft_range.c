@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/14 22:38:53 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 22:58:54 by okate            ###   ########.fr       */
+/*   Created: 2020/03/05 17:14:04 by okate             #+#    #+#             */
+/*   Updated: 2020/03/05 21:57:43 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strcpy(char *s1, char *s2)
+int		*ft_range(int min, int max)
 {
-	int	i;
+	int		*str;
+	int		i;
+	int		a;
 
 	i = 0;
-	while (s2[i] != '\0')
+	a = (max - min);
+	if (min >= max)
+		return (0);
+	if (!(str = (int*)malloc(a * 4)))
+		return (0);
+	while (min < max)
 	{
-		s1[i] = s2[i];
+		str[i] = min;
 		i++;
+		min++;
 	}
-	s1[i] ='\0';
-	return (s1);
-}
-int main()
-{
-	char s1[] = "sdfsdfs";
-	char s2[] = "hello";
-	printf("%s\n", ft_strcpy(s1, s2));
-	return (0);
+	return (str);
 }

@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/04 19:54:37 by okate             #+#    #+#             */
+/*   Updated: 2020/03/04 22:28:54 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-int		main(int ac, char **av)
+int		main(int argc, char **argv)
 {
-	write(1, "z\n", 2);
+	int a;
+	int b;
+
+	a = 0;
+	b = 1;
+	while (b < argc)
+	{
+		while (argv[b][a] != '\0')
+		{
+			ft_putchar(argv[b][a]);
+			a++;
+		}
+		ft_putchar('\n');
+		b++;
+		a = 0;
+	}
 	return (0);
 }

@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   btree_create_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/03/13 19:32:40 by okate             #+#    #+#             */
+/*   Updated: 2020/03/14 17:21:53 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_btree.h"
+#include <stdlib.h>
 
-int		main(int ac, char **av)
+t_btree	*btree_create_node(void *item)
 {
-	write(1, "z\n", 2);
-	return (0);
+	t_btree	*new_elem;
+
+	new_elem = malloc(sizeof(t_btree));
+	if (new_elem)
+	{
+		new_elem->right = 0;
+		new_elem->left = 0;
+		new_elem->item = item;
+	}
+	return (new_elem);
 }

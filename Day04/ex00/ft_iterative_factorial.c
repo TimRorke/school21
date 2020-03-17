@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okate <okate@student.42.fr>                +#+  +:+       +#+        */
+/*   By: okate <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 21:20:06 by okate             #+#    #+#             */
-/*   Updated: 2020/03/16 21:20:58 by okate            ###   ########.fr       */
+/*   Created: 2020/02/29 14:16:05 by okate             #+#    #+#             */
+/*   Updated: 2020/02/29 22:42:35 by okate            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int		ft_iterative_factorial(int nb);
 
-int		main(int ac, char **av)
+int		ft_iterative_factorial(int nb)
 {
-	write(1, "z\n", 2);
-	return (0);
+	int a;
+	int b;
+
+	a = 1;
+	b = 1;
+	if (nb < 0)
+	{
+		return (0);
+	}
+	else if (nb == 0)
+	{
+		return (1);
+	}
+	while (a <= nb)
+	{
+		b = b * a;
+		a++;
+	}
+	return (b);
 }
